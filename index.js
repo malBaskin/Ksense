@@ -2,7 +2,7 @@ import FetchWrapper from "./fetch-wrapper.js";
 
 const api = new FetchWrapper('https://jsonplaceholder.typicode.com/');
 
- const output = document.querySelector("#user-table");
+ const output = document.querySelector("#user-rows");
 
 
 document.addEventListener("DOMContentLoaded", () => {
