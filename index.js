@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", () => {
 		 //output.innerHTML = '';
 		data.forEach(user => {
 			let userID = user.id;
-			console.log(userID);
+			//console.log(userID);
 			try{
 
         		output.insertAdjacentHTML("beforeend",`<td class="user-data"> <button onclick="openMenu()">${user.name}</button></td>`)
@@ -28,14 +28,18 @@ document.addEventListener("DOMContentLoaded", () => {
 
 function getPosts(){
  	api.get("posts").then(data =>{
- 		data.forEach(posts => {
- 			try{
+		data.forEach(post => {
+			let userID = user.id;
+			console.log(userID);
+		try{
 
-        		postsOutput.insertAdjacentHTML("beforeend",`<li><div class="card">[${posts.category}] ${posts.title}</div></li>`)
-    		}
-    		catch(error){
-       			 console.error(error)
-    		}
- 		})
- 	})
+
+			postsOutput.insertAdjacentHTML("beforeend",`<li><div class="card">[${posts.category}] ${posts.title}</div></li>`)
+		}
+		catch(error){
+		 		console.error(error)
+		}
+
+		})
+	})
  }

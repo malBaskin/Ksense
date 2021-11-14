@@ -28,21 +28,7 @@
                 document.querySelector(".posts-popup").classList.remove("open");
             }
             function  openMenu() {
-            	api.get("posts").then(data =>{
-					data.forEach(post => {
-						let userID = user.id;
-						console.log(userID);
-					try{
-
-
-        				postsOutput.insertAdjacentHTML("beforeend",`<li><div class="card">[${posts.category}] ${posts.title}</div></li>`)
-    				}
-    				catch(error){
-       			 		console.error(error)
-    				}
-			
-					})
-				})
+            	getPosts();
      			document.querySelector(".posts-popup").classList.add("open");
 			 }
         </script>
