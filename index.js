@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", () => {
 	api.get("users").then(data =>{
 		output.innerHTML ='';
 		console.log(data[1].name);
-		data.forEach(users => {
+		data.forEach(user => {
 			output.insertAdjaacentHTML("beforeend",`<td>${user.name}</td>`)
 		})
 		//table.textContent = data;
