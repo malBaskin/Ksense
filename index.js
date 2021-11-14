@@ -4,7 +4,7 @@ const api = new FetchWrapper('https://jsonplaceholder.typicode.com/');
 
 const output = document.querySelector("#user-table");
 const postsOutput= document.querySelector("#popup-list");
-const userID;
+const userID = [];
 
 
 document.addEventListener("DOMContentLoaded", () => {
