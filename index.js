@@ -3,6 +3,7 @@ import FetchWrapper from "./fetch-wrapper.js";
 const api = new FetchWrapper('https://jsonplaceholder.typicode.com/');
 
 const output = document.querySelector("#user-table");
+const postsOutput= document.querySelector("#popup-list");
 
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -13,7 +14,7 @@ document.addEventListener("DOMContentLoaded", () => {
 			
 			try{
 
-        		output.insertAdjacentHTML("beforeend",`<td> <button onclick="openMenu()">${user.name}</button></td>`)
+        		output.insertAdjacentHTML("beforeend",`<td class="user-data"> <button onclick="openMenu()">${user.name}</button></td>`)
     		}
     		catch(error){
        			 console.error(error)
@@ -24,6 +25,20 @@ document.addEventListener("DOMContentLoaded", () => {
 	})
 })
 
-function openMenu() {
-                document.querySelector(".posts-popup").classList.add("open");
-            }
+function  openMenu() {
+     document.querySelector(".posts-popup").classList.add("open");
+ }
+
+function getPosts(){
+ 	api.get("posts").then(data =>{
+ 		data.forEach(posts => {
+ 			try{
+
+        		postsOutput.insertAdjacentHTML("beforeend",`<li><div class="card">[${posts.category}] ${posts.title}</div></li>`)
+    		}
+    		catch(error){
+       			 console.error(error)
+    		}
+ 		})
+ 	})
+ }
