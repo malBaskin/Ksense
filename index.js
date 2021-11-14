@@ -17,13 +17,9 @@ document.addEventListener("DOMContentLoaded", () => {
     			api.get("posts").then(data => {
 					data.forEach(post => {
 						if(user.id == post.usesrId)
-						try{
-
-        					output.insertAdjacentHTML("beforeend",`<div class="card"> <li>${post.title}</li></div>`)
-    					}
-    					catch(error){
-       					 	console.error(error)
-    					}
+						{
+        					postsOutput.insertAdjacentHTML("beforeend",`<div class="card"> <li>${post.title}</li></div>`)
+						}
 					})
 			
 				})
