@@ -22,6 +22,9 @@ document.addEventListener("DOMContentLoaded", () => {
         						postsOutput.insertAdjacentHTML("beforeend",`<div class="card"> <li>${post.title}</li></div>`)
 							}
 						}
+						catch(error){
+       			 			console.error(error)
+    					}
 					})
 			
 				})
