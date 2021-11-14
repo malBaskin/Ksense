@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", () => {
 			console.log(user.name);
 			
 			try{
-        		output.insertAdjacentHTML("beforeend",`<td>${user.name}</td>`)
+        		output.insertAdjacentHTML("beforeend",`<td>${user.name.value}</td>`)
     		}
     		catch(error){
        			 console.error(error)
