@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", () => {
 		 //output.innerHTML = '';
 		data.forEach(user => {
 			console.log(user);
-			output.insertAdjaacentHTML("beforeend",`<td>${user.name}</td>`)
+			output.insertAdjacentHTML("beforeend",`<td>${user.name}</td>`)
 		})
 		//table.textContent = data;
 	})
