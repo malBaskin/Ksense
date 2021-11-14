@@ -4,15 +4,14 @@ const api = new FetchWrapper('https://jsonplaceholder.typicode.com/');
 
 const output = document.querySelector("#user-table");
 const postsOutput= document.querySelector("#popup-list");
-const userID = [];
 
 
 document.addEventListener("DOMContentLoaded", () => {
 	api.get("users").then(data =>{
 		 //output.innerHTML = '';
 		data.forEach(user => {
-			console.log(user.name);
-			userID.push(user.ID);
+			let userID = user.id;
+			console.log(userID);
 			try{
 
         		output.insertAdjacentHTML("beforeend",`<td class="user-data"> <button onclick="openMenu()">${user.name}</button></td>`)
