@@ -3,12 +3,11 @@ import FetchWrapper from "./fetch-wrapper.js";
 const api = new FetchWrapper('https://jsonplaceholder.typicode.com/');
 
 const output = document.querySelector("#user-table");
-const postsOutput= document.querySelector("#popup-list");
+const postsOutput= document.querySelector("#posts-list");
 
 
 document.addEventListener("DOMContentLoaded", () => {
 	api.get("users").then(data =>{
-		 //output.innerHTML = '';
 		data.forEach(user => {
 			let userID = user.id;
 			//console.log(userID);
@@ -22,6 +21,18 @@ document.addEventListener("DOMContentLoaded", () => {
 			
 		})
 		//table.textContent = data;
+	})
+	api.get("posts").then(data => {
+		data.forEach(post => {
+			if(post.id == userID)
+			try{
+
+        		postsOutput.insertAdjacentHTML("beforeend",`<td class="card"> ${post.title}</td>`)
+    		}
+    		catch(error){
+       			 console.error(error)
+    		}
+		})
 	})
 })
 
