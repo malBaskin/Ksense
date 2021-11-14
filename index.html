@@ -8,17 +8,32 @@
 	<title>KSense Job App</title>
 </head>
 <body>
+	 <aside class="posts-popup">
+                <h3>Posts </h3>
+                <button class="sidebar-close-button" onclick="closeMenu()">x</button>
+                <ul id="popup-list">
+                    
+                </ul>
+            </aside>
 	 <div class="container" id="main">
         <table id="user-table">
 			<tr>
 				<th>User</th>
 			</tr>
-			<trc id= "user-rows">
+			<tr id= "user-rows">
 				<td >{data}</td>
 				<td>{More Data}</td>
 				<td>$100</td>
 			</tr>
 		</table>
     </div>
+     <script>
+            function openMenu() {
+                document.querySelector(".sidebar").classList.add("open");
+            }
+            function closeMenu() {
+                document.querySelector(".sidebar").classList.remove("open");
+            }
+        </script>
 </body>
 </html>
