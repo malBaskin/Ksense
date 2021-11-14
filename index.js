@@ -3,7 +3,7 @@ import FetchWrapper from "./fetch-wrapper.js";
 const api = new FetchWrapper('https://jsonplaceholder.typicode.com/');
 
 const output = document.querySelector("#user-table");
-const postsOutput= document.querySelector("#posts-list");
+const postsOutput= document.querySelector("#user-data");
 let userID = [];
 
 document.addEventListener("DOMContentLoaded", () => {
