@@ -1,11 +1,12 @@
+body{
+	display: flex;
+	flex-wrap: wrap;
+}
+
 #user-table{
 	border: 2px solid black;
 }
 
-#user-data{
-	display: flex;
-	flex-wrap: wrap;
-}
 .posts-popup{
      position: fixed;
      transform: translateX(-30rem);

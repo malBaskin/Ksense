@@ -26,16 +26,16 @@ document.addEventListener("DOMContentLoaded", () => {
 })
 
 
-function getPosts(){
- 	api.get("posts").then(data =>{
- 		data.forEach(posts => {
- 			try{
+// function getPosts(){
+//  	api.get("posts").then(data =>{
+//  		data.forEach(posts => {
+//  			try{
 
-        		postsOutput.insertAdjacentHTML("beforeend",`<li><div class="card">[${posts.category}] ${posts.title}</div></li>`)
-    		}
-    		catch(error){
-       			 console.error(error)
-    		}
- 		})
- 	})
- }
+//         		postsOutput.insertAdjacentHTML("beforeend",`<li><div class="card">[${posts.category}] ${posts.title}</div></li>`)
+//     		}
+//     		catch(error){
+//        			 console.error(error)
+//     		}
+//  		})
+//  	})
+//  }
