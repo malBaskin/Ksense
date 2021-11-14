@@ -15,7 +15,7 @@ body{
      height: 100%;
  }
 
- .posts-popup .open {
+ .posts-popup.open {
      transform: translateX(0);
  }
  .sidebar-close-button{
