@@ -4,7 +4,7 @@ const api = new FetchWrapper('https://jsonplaceholder.typicode.com/');
 
 const output = document.querySelector("#user-table");
 const postsOutput= document.querySelector("#posts-list");
-let userID []= 0;
+let userID = [];
 
 document.addEventListener("DOMContentLoaded", () => {
 	api.get("users").then(data =>{
