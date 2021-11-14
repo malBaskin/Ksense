@@ -16,9 +16,11 @@ document.addEventListener("DOMContentLoaded", () => {
         		output.insertAdjacentHTML("beforeend",`<td class="user-data"> <button onclick="openMenu()">${user.name}</button></td>`)
     			api.get("posts").then(data => {
 					data.forEach(post => {
-						if(user.id == post.userId)
-						{
-        					postsOutput.insertAdjacentHTML("beforeend",`<div class="card"> <li>${post.title}</li></div>`)
+						try{
+							if(user.id == post.userId)
+							{
+        						postsOutput.insertAdjacentHTML("beforeend",`<div class="card"> <li>${post.title}</li></div>`)
+							}
 						}
 					})
 			
