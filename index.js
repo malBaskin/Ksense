@@ -4,7 +4,7 @@ const api = new FetchWrapper('https://jsonplaceholder.typicode.com/');
 
 const output = document.querySelector("#user-table");
 const postsOutput= document.querySelector("#user-data");
-let userID = [];
+//let userID = [];
 
 document.addEventListener("DOMContentLoaded", () => {
 	api.get("users").then(data =>{
@@ -14,23 +14,24 @@ document.addEventListener("DOMContentLoaded", () => {
 			try{
 
         		output.insertAdjacentHTML("beforeend",`<td class="user-data"> <button onclick="openMenu()">${user.name}</button></td>`)
+    			api.get("posts").then(data => {
+					data.forEach(post => {
+						if(user.id == post.usesrId)
+						try{
+
+        					output.insertAdjacentHTML("beforeend",`<div class="card"> <li>${post.title}</li></div>`)
+    					}
+    					catch(error){
+       					 	console.error(error)
+    					}
+					})
+			
+				})
     		}
     		catch(error){
        			 console.error(error)
     		}
-    		api.get("posts").then(data => {
-				data.forEach(post => {
-					if(user.id == post.id)
-					try{
-
-        				output.insertAdjacentHTML("beforeend",`<div class="card"> <li>${post.title}</li></div>`)
-    				}
-    				catch(error){
-       					 console.error(error)
-    				}
-				})
-			
-			})
+    		
 		//table.textContent = data;
 		})
 	})
