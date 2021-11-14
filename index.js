@@ -2,7 +2,7 @@ import FetchWrapper from "./fetch-wrapper.js";
 
 const api = new FetchWrapper('https://jsonplaceholder.typicode.com/');
 
- const output = document.querySelector("#user-rows");
+const output = document.querySelector("#user-rows");
 
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -12,7 +12,8 @@ document.addEventListener("DOMContentLoaded", () => {
 			console.log(user.name);
 			
 			try{
-        		output.insertAdjacentHTML("beforeend",`<td>"This is another one</td>`)
+
+        		output.insertAdjacentHTML("beforeend",`<td>${user.name}</td>`)
     		}
     		catch(error){
        			 console.error(error)
