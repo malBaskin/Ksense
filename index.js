@@ -2,11 +2,16 @@ import FetchWrapper from "./fetch-wrapper.js";
 
 const api = new FetchWrapper('https://jsonplaceholder.typicode.com/');
 
-const table = document.querySelector("#user-table");
+ const output = document.querySelector("#user-table");
+
 
 document.addEventListener("DOMContentLoaded", () => {
 	api.get("users").then(data =>{
-		console.log(data);
+		output.innerHTML ='';
+		console.log(data[1].name);
+		data.forEach(users => {
+			output.insertAdjaacentHTML("beforeend",`<td>${user.name}</td>`)
+		})
 		//table.textContent = data;
 	})
 })
