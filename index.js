@@ -23,3 +23,7 @@ document.addEventListener("DOMContentLoaded", () => {
 		//table.textContent = data;
 	})
 })
+
+function openMenu() {
+                document.querySelector(".posts-popup").classList.add("open");
+            }

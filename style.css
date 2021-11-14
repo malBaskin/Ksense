@@ -25,3 +25,26 @@
     right: .5rem;
     top: 1.5rem
   }
+
+  th{
+  	font-size: 3rem;
+  	text-align: center;
+  }
+
+ button {
+ 	background-color: grey;
+	border-radius: 16px;
+	padding: 25px 50px;
+	color: white;
+	font-size: large;
+ }
+
+ .card {
+ 	background-color: white;
+  	padding: 10px 20px;
+  	border: 1px solid lightgray;
+  	border-radius: 3px;
+  	display: inline-block;
+  	margin: 8px 0;
+}
+ }
