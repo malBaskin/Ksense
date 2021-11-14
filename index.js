@@ -8,8 +8,8 @@ const api = new FetchWrapper('https://jsonplaceholder.typicode.com/');
 document.addEventListener("DOMContentLoaded", () => {
 	api.get("users").then(data =>{
 		output.innerHTML ='';
-		console.log(data[1].name);
 		data.forEach(user => {
+			console.log(user);
 			output.insertAdjaacentHTML("beforeend",`<td>${user.name}</td>`)
 		})
 		//table.textContent = data;
