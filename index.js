@@ -32,20 +32,10 @@ document.addEventListener("DOMContentLoaded", () => {
 			
 			})
 		//table.textContent = data;
-	})
-	api.get("posts").then(data => {
-		data.forEach(post => {
-			if(post.id == userID)
-			try{
-
-        		postsOutput.insertAdjacentHTML("beforeend",`<td class="card"> ${post.title}</td>`)
-    		}
-    		catch(error){
-       			 console.error(error)
-    		}
 		})
 	})
 })
+	
 
 
 function getPosts(){
