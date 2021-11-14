@@ -25,9 +25,6 @@ document.addEventListener("DOMContentLoaded", () => {
 	})
 })
 
-function  openMenu() {
-     document.querySelector(".posts-popup").classList.add("open");
- }
 
 function getPosts(){
  	api.get("posts").then(data =>{
