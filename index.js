@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", () => {
 		 //output.innerHTML = '';
 		data.forEach(user => {
 			console.log(user.name);
-			userID = user.ID;
+			userID.push(user.ID);
 			try{
 
         		output.insertAdjacentHTML("beforeend",`<td class="user-data"> <button onclick="openMenu()">${user.name}</button></td>`)
