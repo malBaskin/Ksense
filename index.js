@@ -23,7 +23,7 @@ document.addEventListener("DOMContentLoaded", () => {
 					if(user.id == post.id)
 					try{
 
-        				postsOutput.insertAdjacentHTML("beforeend",`<td class="card"> ${post.title}</td>`)
+        				postsOutput.insertAdjacentHTML("beforeend",`<div class="card"> <li>${post.title}</li></div>`)
     				}
     				catch(error){
        					 console.error(error)
