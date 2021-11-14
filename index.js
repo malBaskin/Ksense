@@ -9,8 +9,8 @@ let userID = [];
 document.addEventListener("DOMContentLoaded", () => {
 	api.get("users").then(data =>{
 		data.forEach(user => {
-			userID = user.id;
-			//console.log(userID);
+			//userID = user.id;
+
 			try{
 
         		output.insertAdjacentHTML("beforeend",`<td class="user-data"> <button onclick="openMenu()">${user.name}</button></td>`)
@@ -18,8 +18,19 @@ document.addEventListener("DOMContentLoaded", () => {
     		catch(error){
        			 console.error(error)
     		}
+    		api.get("posts").then(data => {
+				data.forEach(post => {
+					if(user.id == post.id)
+					try{
+
+        				postsOutput.insertAdjacentHTML("beforeend",`<td class="card"> ${post.title}</td>`)
+    				}
+    				catch(error){
+       					 console.error(error)
+    				}
+				})
 			
-		})
+			})
 		//table.textContent = data;
 	})
 	api.get("posts").then(data => {
